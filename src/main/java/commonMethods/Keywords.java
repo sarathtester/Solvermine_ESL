@@ -323,6 +323,20 @@ public class Keywords extends ATUReports implements Booking_Locators {
 
 	}
 
+	public boolean isElementAccessible(WebDriver driver, String xpath) {
+		String[] values = splitXpath(xpath);
+		try {
+			WebElement webElement = driver.findElement(By.xpath(values[1]));
+			webElement.isEnabled();
+			add(driver, "Element is enabled" + values[0], LogAs.PASSED, true, values[0]);
+			return webElement.isEnabled();
+		} catch (NoSuchElementException e) {
+			add(driver, "Element is not enabled", LogAs.FAILED, true, values[0]);
+			return false;
+//			Assert.fail();
+		}
+	}
+
 	public void click1(WebDriver driver, String path) {
 		String[] values = splitXpath(path);
 		try {
@@ -761,6 +775,7 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		}
 	}
 
+	
 	public int getRandomNum(WebDriver driver, int upperlimit) {
 		List<Integer> randomZeroToSeven = new ArrayList<>();
 		for (int i = 1; i <= upperlimit; i++) {
@@ -1690,7 +1705,58 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		test = extentTest;
 	}
 
+	public void mouseOverToElement(WebDriver driver, String element) {
+		String[] values = splitXpath(element);
+		WebElement webElement = driver.findElement(By.xpath(values[1]));
+		try {
+			Actions builder = new Actions(driver);
+			builder.moveToElement(webElement).build().perform();
+         wait(driver,"1");
+		} catch (Exception e) {
 
-		
+		}
+	}
+	
+	public void scrollTop(WebDriver driver) {
+		try {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scroll(0,-200)", "");
+			add(driver, "Scrolled to the Top ", LogAs.PASSED, true, "Not");
+
+		} catch (Exception e) {
+			add1(driver, "Unable to scroll to the Top", LogAs.FAILED, true, "Not" + "- " + e.getLocalizedMessage());
+			((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+			Assert.fail();
+		}
+	}
+//Color
+	public String getTextBackgroundColor(WebDriver driver,String Xpath) {
+		String[] values=splitXpath(Xpath);
+		try {
+			WebElement eleSearch = driver.findElement(By.xpath(values[1]));
+
+			String rgbFormat = eleSearch.getCssValue("background-color");
+
+//			System.out.println(rgbFormat);     //In RGB Format the value will be print => rgba(254, 189, 105, 1)
+
+			String hexcolor = rgbToHex(rgbFormat);
+//			System.out.println(hexcolor);
+			
+			return hexcolor;
+		}catch(Exception e) {
+			System.out.println("Unable to get color of the element..!");
+			return "";
+		}
+	}
+
+public static String rgbToHex(String rgb) {
+        String[] rgbValues = rgb.replace("rgba(", "").replace(")", "").split(", ");
+        int red = Integer.parseInt(rgbValues[0]);
+        int green = Integer.parseInt(rgbValues[1]);
+        int blue = Integer.parseInt(rgbValues[2]);
+
+        return String.format("#%02X%02X%02X", red, green, blue);
+    }
+	
 		
 }

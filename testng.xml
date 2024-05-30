@@ -5,7 +5,7 @@
 			<class name="commonMethods.Testcases" />
 		</classes>
 		<methods>
-			<include name="OCRDemo" priority="3" />
+			<include name="Vss_SC07" priority="3" />
 		</methods>
 	</test>
 	<listeners>
