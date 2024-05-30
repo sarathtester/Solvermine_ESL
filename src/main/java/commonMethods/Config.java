@@ -79,7 +79,6 @@ public class Config extends Keywords {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--force-device-scale-factor=0.9");
 			WebDriverManager.chromedriver().setup();
-			options.addArguments('headless');
 			options.addArguments("disable-notifications");
 			options.addArguments("--disable-extensions"); // to disable extension
 			options.addArguments("--disable-notifications"); // to disable notification
@@ -132,7 +131,6 @@ public class Config extends Keywords {
 
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
-			options.addArguments('headless');
 			options.addArguments("disable-notifications");
 //			options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
 			LoggingPreferences logPrefs = new LoggingPreferences();
