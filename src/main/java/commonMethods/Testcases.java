@@ -22,7 +22,8 @@ import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 
-import scripts.OCRDemo;
+import scripts.TC_Proforma_Service_Creation_PC01;
+import scripts.TC_Proforma_Service_Creation_PC02;
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
@@ -52,7 +53,10 @@ public class Testcases extends Config {
 	public String Execution = "null";
 	public String buildname = "null";
 
-	OCRDemo d2=new OCRDemo();
+
+	TC_Proforma_Service_Creation_PC01  pc1 = new TC_Proforma_Service_Creation_PC01();
+	TC_Proforma_Service_Creation_PC02  pc2 = new TC_Proforma_Service_Creation_PC02();
+	
 	
 	static ExtentSparkReporter spark;
 	static ExtentTest test;
@@ -94,22 +98,33 @@ public class Testcases extends Config {
 	public void aftertest() throws Throwable {
 		ATUReports.Aftertest(test);
 	}
-
+	
+	
 	@Test
-	public void OCRDemo() throws Exception {
-		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+	public void TC_Proforma_Service_Creation_PC01() throws Exception {
+		test = extent.createTest("Proforma_creation01").assignAuthor("TD").assignCategory("E2E");
 		Keywords.ActionTest(test);
-		WebDriver driver = null;
+		driver = null;
 		driver = getWebDriver1(browser);
 		try {
-			d2.ocrDemo(driver);
+			pc1.Proformacreation01(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+	}
+	
+	@Test
+	public void TC_Proforma_Service_Creation_PC02() throws Exception {
+		test = extent.createTest("Proforma_creation02").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			pc2.Proformacreation02(driver);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
-	
 }
-
