@@ -1690,7 +1690,161 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		test = extentTest;
 	}
 
+	  public void pass(WebDriver driver, String value) {
+			add(driver,value, LogAs.PASSED,true, "");	
+		}
+		
+		public void fail(WebDriver driver, String value) {
+			add1(driver,value, LogAs.FAILED,true, "");
+		}
+		
+		
+		   public void write_data(String columnName, String str) {
+		       
+			   String filePath = System.getProperty("user.dir") + "\\uploads\\Script_Data's.xlsx";
 
-		
-		
+		        // Specify the sheet name
+		        String sheetName = "Sheet1";
+
+		        // New value to be set in the cell
+		        String newValue = str;
+
+		        try (FileInputStream fis = new FileInputStream(filePath);
+		             Workbook workbook = new XSSFWorkbook(fis)) {
+
+		            // Get the sheet
+		            Sheet sheet = workbook.getSheet(sheetName);
+
+		            // Get the row index (assuming you want to write to the first available row)
+		            int rowIndex = 1; // Row index
+
+		            // Get the row, create if it doesn't exist
+		            Row row = sheet.getRow(rowIndex);
+		            if (row == null) {
+		                row = sheet.createRow(rowIndex);
+		            }
+
+		            // Get the column index based on the column name
+		            int columnIndex = getColumnIndexByName(sheet, columnName);
+
+		            // Get the cell, create if it doesn't exist
+		            Cell cell = row.getCell(columnIndex);
+		            if (cell == null) {
+		                cell = row.createCell(columnIndex);
+		            }
+
+		            // Set the new value
+		            cell.setCellValue(newValue);
+
+		            // Write the changes back to the Excel file
+		            try (FileOutputStream fos = new FileOutputStream(filePath)) {
+		                workbook.write(fos);
+		            }
+
+		            System.out.println("Value updated successfully!");
+
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+		    }
+
+		    // Method to get the column index by column name
+		    
+		    
+		    public String Readdata(String Columnname) throws Exception {
+		    	
+		    	
+		    	 String filePath = System.getProperty("user.dir") +"\\uploads\\Script_Data's.xlsx";
+
+		         // Specify the sheet name
+		         String sheetName = "Sheet1";
+
+		         // Specify the row index (0-based)
+		         int rowIndex = 1; // Row index
+
+		         // Specify the column name
+		         String columnName = Columnname; // Column name
+
+		          FileInputStream fis = new FileInputStream(filePath);
+		              Workbook workbook = new XSSFWorkbook(fis); 
+
+		             // Get the sheet
+		             Sheet sheet = workbook.getSheet(sheetName);
+
+		             // Get the row
+		             Row row = sheet.getRow(rowIndex);
+
+		             // Get the column index based on the column name
+		             int columnIndex = getColumnIndexByName(sheet, columnName);
+
+		             // Get the cell
+		             Cell cell = row.getCell(columnIndex);
+
+		             // Get the value from the cell
+		             String cellValue = cell.getStringCellValue(); // Assuming the cell contains string value
+
+		             // Print the cell value
+		             System.out.println("Cell Value: " + cellValue);
+
+		     
+				return cellValue;
+		     }
+
+		     // Method to get the column index by column name
+		     public static int getColumnIndexByName(Sheet sheet, String columnName) {
+		         Row row = sheet.getRow(0); // Assuming the column names are in the first row
+		         for (int i = 0; i < row.getLastCellNum(); i++) {
+		             Cell cell = row.getCell(i);
+		             if (cell.getStringCellValue().equals(columnName)) {
+		                 return i;
+		             }
+		         }
+		         throw new IllegalArgumentException("Column with name '" + columnName + "' not found.");
+		     }
+		     
+		     public String getTextColor(WebDriver driver,String Xpath) {
+					String[] values=splitXpath(Xpath);
+					try {
+						WebElement eleSearch = driver.findElement(By.xpath(values[1]));
+						String rgbFormat = eleSearch.getCssValue("color");
+						String hexcolor = rgbToHex(rgbFormat);
+						
+						return hexcolor;
+					}catch(Exception e) {
+						System.out.println("Unable to get color of the element..!");
+						return "";
+					}
+					
+					
+				}
+				
+				public static String rgbToHex(String rgb) {
+			        String[] rgbValues = rgb.replace("rgba(", "").replace(")", "").split(", ");
+			        int red = Integer.parseInt(rgbValues[0]);
+			        int green = Integer.parseInt(rgbValues[1]);
+			        int blue = Integer.parseInt(rgbValues[2]);
+
+			        return String.format("#%02X%02X%02X", red, green, blue);
+			    }
+
+		public String getTextBackgroundColor(WebDriver driver,String Xpath) {
+					String[] values=splitXpath(Xpath);
+					try {
+						WebElement eleSearch = driver.findElement(By.xpath(values[1]));
+
+						String rgbFormat = eleSearch.getCssValue("background-color");
+
+//						System.out.println(rgbFormat);     //In RGB Format the value will be print => rgba(254, 189, 105, 1)
+
+						String hexcolor = rgbToHex(rgbFormat);
+//						System.out.println(hexcolor);
+						
+						return hexcolor;
+					}catch(Exception e) {
+						System.out.println("Unable to get color of the element..!");
+						return "";
+					}
+					
+					
+				}
 }

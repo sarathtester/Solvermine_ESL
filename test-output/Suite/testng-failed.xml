@@ -11,10 +11,10 @@
       <class name="commonMethods.Testcases">
         <methods>
           <include name="Teardown"/>
-          <include name="OCRDemo"/>
           <include name="Extentreport"/>
           <include name="aftertest"/>
           <include name="getDataFromConfig"/>
+          <include name="TC_Proforma_Service_Creation_PC01"/>
         </methods>
       </class> <!-- commonMethods.Testcases -->
     </classes>
