@@ -48,22 +48,16 @@ public class ATUReports {
 	private  long currentExecutionTime;
 	public  final String EMPTY = "";
 	public  final String STEP_NUM = "STEP";
-	public  final String PASSED_BUT_FAILED = "passedButFailed";
-	
-	//
-	
+	public  final String PASSED_BUT_FAILED = "passedButFailed";	
 	static ExtentSparkReporter spark;
 	static ExtentTest test;
-	static ExtentReports extent;
-	
+	static ExtentReports extent;	
 	static ExtentSparkReporter spark1;
 	static ExtentTest test1;
 	static ExtentReports extent1;
-	
-	
 	static long StartTime;
 	protected static WebDriver driver;
-	public static String URL = "https://distillautomation-live.solverminds.net/";
+	public static String URL = "https://lrpv2atesting.solverminds.net/main";
 	
 	public  void setAuthorInfo(String paramString1, String paramString2, String paramString3) {
 		AuthorDetails localAuthorDetails = new AuthorDetails();
@@ -480,7 +474,7 @@ private  void takeScreenShot1(WebDriver driver,String object) {
 	public static ExtentReports reportsetup() throws IOException {
 		String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy_HHmm"));
 
-		spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/Extent Report/DISTILLReport_" + timeStamp + ".html");
+		spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/Extent Report/ESL_Report_" + timeStamp + ".html");
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		spark.loadXMLConfig(new File("test.xml"));
