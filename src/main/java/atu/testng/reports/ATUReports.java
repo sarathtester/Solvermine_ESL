@@ -480,7 +480,7 @@ private  void takeScreenShot1(WebDriver driver,String object) {
 	public static ExtentReports reportsetup() throws IOException {
 		String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy_HHmm"));
 
-		spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/Extent Report/DISTILLReport_" + timeStamp + ".html");
+		spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/Extent Report/ESL_Report" + timeStamp + ".html");
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		spark.loadXMLConfig(new File("test.xml"));

@@ -11,7 +11,7 @@
       <class name="commonMethods.Testcases">
         <methods>
           <include name="Teardown"/>
-          <include name="OCRDemo"/>
+          <include name="Proforma_Service_Creation_PC08"/>
           <include name="Extentreport"/>
           <include name="aftertest"/>
           <include name="getDataFromConfig"/>

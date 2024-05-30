@@ -5,7 +5,7 @@
 			<class name="commonMethods.Testcases" />
 		</classes>
 		<methods>
-			<include name="OCRDemo" priority="3" />
+				<include name="Proforma_Service_Creation_PC08" priority="5" />
 		</methods>
 	</test>
 	<listeners>
