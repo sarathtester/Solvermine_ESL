@@ -20,11 +20,15 @@ jobs:
       with:
         java-version: '17'
 
-    - name: Set up Chrome WebDriver
-      uses: nanasess/setup-chromedriver@v1
-
-    - name: Set up Firefox WebDriver
-      uses: nanasess/setup-geckodriver@v1
+    - name: Set up WebDriver
+      run: |
+        CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+        wget -qP /tmp/ "https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip"
+        unzip -o /tmp/chromedriver_linux64.zip -d /tmp/
+        sudo mv /tmp/chromedriver /usr/local/bin/
+        sudo chmod +x /usr/local/bin/chromedriver
+        firefox --version  # Ensure Firefox is available
+        geckodriver --version  # Ensure GeckoDriver is available
 
     - name: Build and Test with Maven
       run: mvn -B verify
