@@ -77,9 +77,8 @@ public class Config extends Keywords {
 		if (browserName.equals("Chrome")) {
 			
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--force-device-scale-factor=0.9");
+
 			WebDriverManager.chromedriver().setup();
-			options.addArguments("--headless");
 			options.addArguments("disable-notifications");
 			options.addArguments("--disable-extensions"); // to disable extension
 			options.addArguments("--disable-notifications"); // to disable notification
@@ -91,7 +90,7 @@ public class Config extends Keywords {
 			LoggingPreferences logPrefs = new LoggingPreferences();
 			logPrefs.enable(LogType.BROWSER, Level.ALL);
 			options.setCapability("goog:loggingPrefs", logPrefs);
-//		    options.addArguments("--log-level=1");
+			// options.addArguments("--log-level=1");
 			options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
 			WebDriver driver = new ChromeDriver(options);
 			System.out.println("Chrome Browser launched...");

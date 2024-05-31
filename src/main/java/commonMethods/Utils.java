@@ -18,12 +18,12 @@ public class Utils {
 	
 	//public static String testDataFile=System.getProperty("user.dir")+"/data/TestData/FlipTestData";
 	//public static String testDataFile=getDataFromTestConfig("Test Data Path");
-	public static String getDataFromTestData(String autoTestCaseNameVal, String label,String sheetno) {
+	public static String getDataFromTestData(String autoTestCaseNameVal, String label,String Sheetno) {
 		String requiredCellVal = "";
 		try {
 			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/data/TestData.xlsx");
 			XSSFWorkbook wb = new XSSFWorkbook(fis);
-			XSSFSheet ws = wb.getSheet(sheetno);
+			XSSFSheet ws = wb.getSheet(Sheetno);
 			int rowNum = ws.getLastRowNum() + 1;
 
 			Iterator rowIterator = ws.rowIterator();
