@@ -2,7 +2,9 @@ name: Selenium Tests
 
 on:
   push:
-    branches: [ master ]   # Execute on push to master branch
+    branches: [master]   # Execute on push to master branch
+  pull_request:
+    branches: [master]   # Execute on pull requests to master branch
 
 jobs:
   test:
@@ -17,6 +19,10 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '17'
+        distribution: 'adopt'
+
+    - name: Debug Java Version
+      run: java -version
 
     - name: Set up WebDriver
       run: |
