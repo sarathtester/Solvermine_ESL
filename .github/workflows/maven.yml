@@ -11,6 +11,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      CHROME_HEADLESS: 'true'
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
