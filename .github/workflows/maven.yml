@@ -7,7 +7,7 @@ on:
     branches: [master]   # Execute on pull requests to master branch
 
 jobs:
-  test:
+  build:
 
     runs-on: ubuntu-latest
 
