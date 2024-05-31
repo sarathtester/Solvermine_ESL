@@ -1,10 +1,8 @@
-name: Java Selenium Tests
+name: Selenium Tests
 
 on:
   push:
-    branches: [master]   # Execute on push to master branch
-  pull_request:
-    branches: [master]   # Execute on pull requests to master branch
+    branches: [ master ]   # Execute on push to master branch
 
 jobs:
   test:
@@ -32,10 +30,3 @@ jobs:
 
     - name: Build and Test with Maven
       run: mvn -B verify
-
-    - name: Archive test reports
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-reports
-        path: target/surefire-reports
