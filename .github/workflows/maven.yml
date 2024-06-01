@@ -1,10 +1,10 @@
 name: Selenium Tests
 
 on:
-  push:
-    branches: [master]   # Execute on push to master branch
-  pull_request:
-    branches: [master]   # Execute on pull requests to master branch
+  # push:
+  #   branches: [master]   # Execute on push to master branch
+  # pull_request:
+  #   branches: [master]   # Execute on pull requests to master branch
 
 jobs:
   build:
