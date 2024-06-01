@@ -6,7 +6,6 @@
 		</classes>
 		<methods>
 			<include name="TC_Proforma_Service_Creation_PC01" priority="4" />
-			<include name="TC_Proforma_Service_Creation_PC02" priority="5" />
 		</methods>
 	</test>
 	<listeners>

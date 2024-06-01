@@ -463,6 +463,15 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		return keysToSend;
 
 	}
+	
+	public void Actionsendkeys(WebDriver driver,String xpath, String text) {
+		
+		String[] values = splitXpath(xpath);
+		WebElement webElement = driver.findElement(By.xpath(values[1]));
+		Actions act =new Actions(driver);
+		   act.moveToElement(webElement).perform();
+		   act.sendKeys(text).build().perform();
+	}
 
 
 	public void clear(WebDriver driver, String xpaths) {
@@ -477,6 +486,21 @@ public class Keywords extends ATUReports implements Booking_Locators {
 					values[0]);
 			Assert.fail();
 		}
+	}
+	
+	public void Newclear_Type(WebDriver driver) {
+		
+		try {
+			Actions actions = new Actions(driver);
+		
+			actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
+			wait(driver,"2");
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 
@@ -699,6 +723,18 @@ public class Keywords extends ATUReports implements Booking_Locators {
 			Assert.fail();
 		}
 	}
+	
+	public void horizontalscroll(WebDriver driver, String xpath, int input ) {
+		String[] values = splitXpath(xpath);
+		try {
+			WebElement element = driver.findElement(By.xpath(values[1]));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollLeft += "+input+";", element);
+
+		} catch (Exception e) {
+
+		}
+	}
 
 	public void goBack(WebDriver driver) {
 
@@ -826,14 +862,7 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		driver.switchTo().defaultContent();
 	}
 
-	public void getAutoit(String exePath) {
-		try {
-			Runtime.getRuntime().exec(exePath);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-	}
-
+	
 	public void dragElement(WebDriver driver, String xpath) {
 		String[] values = splitXpath(xpath);
 		try {

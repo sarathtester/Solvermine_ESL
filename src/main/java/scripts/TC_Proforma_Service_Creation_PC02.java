@@ -13,18 +13,18 @@ import commonMethods.Utils;
 public class TC_Proforma_Service_Creation_PC02 extends Keywords{
 	
 	String URL = TestNgXml.getdatafromExecution().get("TC_Proforma_Service_Creation_PC02");
-	String Username = Utils.getDataFromTestData("EMS_Module", "Userid", "Sheet2");
-	String pass_word = Utils.getDataFromTestData("EMS_Module", "PassWord", "Sheet2");
-	String searchfield = Utils.getDataFromTestData("VSS_Module", "Search_modulename", "Sheet2");
-	String globalsearchfield = Utils.getDataFromTestData("VSS_Module2", "Global_Searchvalue", "Sheet2");
-	String status_dropdowns = Utils.getDataFromTestData("VSS_Module2", "Status_DropdownValue", "Sheet2");
-    String servicecode = Utils.getDataFromTestData("VSS_Module", "Servicecode_Name", "Sheet2");
-	String New_Service = Utils.getDataFromTestData("VSS_Module", "NewService_Creation", "Sheet2");
-	String New_savepopup = Utils.getDataFromTestData("VSS_Module", "Savepopup", "Sheet2");
-	String Bound_Valueerror = Utils.getDataFromTestData("VSS_Module2", "Bound_Value", "Sheet2");
-	String Change_BoundsValue = Utils.getDataFromTestData("VSS_Module2", "Change_BoundValue", "Sheet2");
-	String proforma_updated = Utils.getDataFromTestData("VSS_Module2", "Proforma_Updated", "Sheet2");
-	String color_verification = Utils.getDataFromTestData("VSS_Module2", "Green_color", "Sheet2");
+	String Username = Utils.getDataFromTestData("EMS_Module", "Userid", "Proforma_Creation");
+	String pass_word = Utils.getDataFromTestData("EMS_Module", "PassWord", "Proforma_Creation");
+	String searchfield = Utils.getDataFromTestData("VSS_Module", "Search_modulename", "Proforma_Creation");
+	String globalsearchfield = Utils.getDataFromTestData("VSS_Module2", "Global_Searchvalue", "Proforma_Creation");
+	String status_dropdowns = Utils.getDataFromTestData("VSS_Module2", "Status_DropdownValue", "Proforma_Creation");
+    String servicecode = Utils.getDataFromTestData("VSS_Module", "Servicecode_Name", "Proforma_Creation");
+	String New_Service = Utils.getDataFromTestData("VSS_Module", "NewService_Creation", "Proforma_Creation");
+	String New_savepopup = Utils.getDataFromTestData("VSS_Module", "Savepopup", "Proforma_Creation");
+	String Bound_Valueerror = Utils.getDataFromTestData("VSS_Module2", "Bound_Value", "Proforma_Creation");
+	String Change_BoundsValue = Utils.getDataFromTestData("VSS_Module2", "Change_BoundValue", "Proforma_Creation");
+	String proforma_updated = Utils.getDataFromTestData("VSS_Module2", "Proforma_Updated", "Proforma_Creation");
+	String color_verification = Utils.getDataFromTestData("VSS_Module2", "Green_color", "Proforma_Creation");
 	
 	
 	

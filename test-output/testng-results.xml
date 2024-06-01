@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="7" passed="2" failed="0" skipped="0">
+<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[STEP1]]>
@@ -304,144 +304,21 @@
     <line>
       <![CDATA[STEP101]]>
     </line>
-    <line>
-      <![CDATA[STEP102]]>
-    </line>
-    <line>
-      <![CDATA[STEP103]]>
-    </line>
-    <line>
-      <![CDATA[STEP104]]>
-    </line>
-    <line>
-      <![CDATA[STEP105]]>
-    </line>
-    <line>
-      <![CDATA[STEP106]]>
-    </line>
-    <line>
-      <![CDATA[STEP107]]>
-    </line>
-    <line>
-      <![CDATA[STEP108]]>
-    </line>
-    <line>
-      <![CDATA[STEP109]]>
-    </line>
-    <line>
-      <![CDATA[STEP110]]>
-    </line>
-    <line>
-      <![CDATA[STEP111]]>
-    </line>
-    <line>
-      <![CDATA[STEP112]]>
-    </line>
-    <line>
-      <![CDATA[STEP113]]>
-    </line>
-    <line>
-      <![CDATA[STEP114]]>
-    </line>
-    <line>
-      <![CDATA[STEP115]]>
-    </line>
-    <line>
-      <![CDATA[STEP116]]>
-    </line>
-    <line>
-      <![CDATA[STEP117]]>
-    </line>
-    <line>
-      <![CDATA[STEP118]]>
-    </line>
-    <line>
-      <![CDATA[STEP119]]>
-    </line>
-    <line>
-      <![CDATA[STEP120]]>
-    </line>
-    <line>
-      <![CDATA[STEP121]]>
-    </line>
-    <line>
-      <![CDATA[STEP122]]>
-    </line>
-    <line>
-      <![CDATA[STEP123]]>
-    </line>
-    <line>
-      <![CDATA[STEP124]]>
-    </line>
-    <line>
-      <![CDATA[STEP125]]>
-    </line>
-    <line>
-      <![CDATA[STEP126]]>
-    </line>
-    <line>
-      <![CDATA[STEP127]]>
-    </line>
-    <line>
-      <![CDATA[STEP128]]>
-    </line>
-    <line>
-      <![CDATA[STEP129]]>
-    </line>
-    <line>
-      <![CDATA[STEP130]]>
-    </line>
-    <line>
-      <![CDATA[STEP131]]>
-    </line>
-    <line>
-      <![CDATA[STEP132]]>
-    </line>
-    <line>
-      <![CDATA[STEP133]]>
-    </line>
-    <line>
-      <![CDATA[STEP134]]>
-    </line>
-    <line>
-      <![CDATA[STEP135]]>
-    </line>
-    <line>
-      <![CDATA[STEP136]]>
-    </line>
-    <line>
-      <![CDATA[STEP137]]>
-    </line>
-    <line>
-      <![CDATA[STEP138]]>
-    </line>
-    <line>
-      <![CDATA[STEP139]]>
-    </line>
-    <line>
-      <![CDATA[STEP140]]>
-    </line>
-    <line>
-      <![CDATA[STEP141]]>
-    </line>
-    <line>
-      <![CDATA[STEP142]]>
-    </line>
   </reporter-output>
-  <suite started-at="2024-05-30T12:37:48 IST" name="Suite" finished-at="2024-05-30T12:39:58 IST" duration-ms="129998">
+  <suite started-at="2024-06-01T13:42:14 IST" name="Suite" finished-at="2024-06-01T13:43:17 IST" duration-ms="62431">
     <groups>
     </groups>
-    <test started-at="2024-05-30T12:37:48 IST" name="Test" finished-at="2024-05-30T12:39:58 IST" duration-ms="129998">
+    <test started-at="2024-06-01T13:42:14 IST" name="Test" finished-at="2024-06-01T13:43:17 IST" duration-ms="62431">
       <class name="commonMethods.Testcases">
-        <test-method is-config="true" signature="Extentreport()[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:37:48 IST" name="Extentreport" finished-at="2024-05-30T12:37:49 IST" duration-ms="633" status="PASS">
+        <test-method is-config="true" signature="Extentreport()[pri:0, instance:commonMethods.Testcases@2f1d0bbc]" started-at="2024-06-01T13:42:14 IST" name="Extentreport" finished-at="2024-06-01T13:42:15 IST" duration-ms="241" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Extentreport -->
-        <test-method is-config="true" signature="getDataFromConfig()[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:37:49 IST" name="getDataFromConfig" finished-at="2024-05-30T12:37:49 IST" duration-ms="54" status="PASS">
+        <test-method is-config="true" signature="getDataFromConfig()[pri:0, instance:commonMethods.Testcases@2f1d0bbc]" started-at="2024-06-01T13:42:15 IST" name="getDataFromConfig" finished-at="2024-06-01T13:42:15 IST" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDataFromConfig -->
-        <test-method signature="TC_Proforma_Service_Creation_PC01()[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:37:49 IST" name="TC_Proforma_Service_Creation_PC01" finished-at="2024-05-30T12:39:16 IST" duration-ms="87543" status="PASS">
+        <test-method signature="TC_Proforma_Service_Creation_PC01()[pri:0, instance:commonMethods.Testcases@2f1d0bbc]" started-at="2024-06-01T13:42:15 IST" name="TC_Proforma_Service_Creation_PC01" finished-at="2024-06-01T13:43:16 IST" duration-ms="61537" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[STEP1]]>
@@ -748,156 +625,18 @@
             </line>
           </reporter-output>
         </test-method> <!-- TC_Proforma_Service_Creation_PC01 -->
-        <test-method is-config="true" signature="Teardown(org.testng.ITestResult)[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:39:16 IST" name="Teardown" finished-at="2024-05-30T12:39:17 IST" duration-ms="299" status="PASS">
+        <test-method is-config="true" signature="Teardown(org.testng.ITestResult)[pri:0, instance:commonMethods.Testcases@2f1d0bbc]" started-at="2024-06-01T13:43:16 IST" name="Teardown" finished-at="2024-06-01T13:43:16 IST" duration-ms="114" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC_Proforma_Service_Creation_PC01 status=SUCCESS method=Testcases.TC_Proforma_Service_Creation_PC01()[pri:0, instance:commonMethods.Testcases@71cb3139] output=STEP1]]]>
+                <![CDATA[[TestResult name=TC_Proforma_Service_Creation_PC01 status=SUCCESS method=Testcases.TC_Proforma_Service_Creation_PC01()[pri:0, instance:commonMethods.Testcases@2f1d0bbc] output=STEP1]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
-        <test-method signature="TC_Proforma_Service_Creation_PC02()[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:39:17 IST" name="TC_Proforma_Service_Creation_PC02" finished-at="2024-05-30T12:39:57 IST" duration-ms="40286" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[STEP102]]>
-            </line>
-            <line>
-              <![CDATA[STEP103]]>
-            </line>
-            <line>
-              <![CDATA[STEP104]]>
-            </line>
-            <line>
-              <![CDATA[STEP105]]>
-            </line>
-            <line>
-              <![CDATA[STEP106]]>
-            </line>
-            <line>
-              <![CDATA[STEP107]]>
-            </line>
-            <line>
-              <![CDATA[STEP108]]>
-            </line>
-            <line>
-              <![CDATA[STEP109]]>
-            </line>
-            <line>
-              <![CDATA[STEP110]]>
-            </line>
-            <line>
-              <![CDATA[STEP111]]>
-            </line>
-            <line>
-              <![CDATA[STEP112]]>
-            </line>
-            <line>
-              <![CDATA[STEP113]]>
-            </line>
-            <line>
-              <![CDATA[STEP114]]>
-            </line>
-            <line>
-              <![CDATA[STEP115]]>
-            </line>
-            <line>
-              <![CDATA[STEP116]]>
-            </line>
-            <line>
-              <![CDATA[STEP117]]>
-            </line>
-            <line>
-              <![CDATA[STEP118]]>
-            </line>
-            <line>
-              <![CDATA[STEP119]]>
-            </line>
-            <line>
-              <![CDATA[STEP120]]>
-            </line>
-            <line>
-              <![CDATA[STEP121]]>
-            </line>
-            <line>
-              <![CDATA[STEP122]]>
-            </line>
-            <line>
-              <![CDATA[STEP123]]>
-            </line>
-            <line>
-              <![CDATA[STEP124]]>
-            </line>
-            <line>
-              <![CDATA[STEP125]]>
-            </line>
-            <line>
-              <![CDATA[STEP126]]>
-            </line>
-            <line>
-              <![CDATA[STEP127]]>
-            </line>
-            <line>
-              <![CDATA[STEP128]]>
-            </line>
-            <line>
-              <![CDATA[STEP129]]>
-            </line>
-            <line>
-              <![CDATA[STEP130]]>
-            </line>
-            <line>
-              <![CDATA[STEP131]]>
-            </line>
-            <line>
-              <![CDATA[STEP132]]>
-            </line>
-            <line>
-              <![CDATA[STEP133]]>
-            </line>
-            <line>
-              <![CDATA[STEP134]]>
-            </line>
-            <line>
-              <![CDATA[STEP135]]>
-            </line>
-            <line>
-              <![CDATA[STEP136]]>
-            </line>
-            <line>
-              <![CDATA[STEP137]]>
-            </line>
-            <line>
-              <![CDATA[STEP138]]>
-            </line>
-            <line>
-              <![CDATA[STEP139]]>
-            </line>
-            <line>
-              <![CDATA[STEP140]]>
-            </line>
-            <line>
-              <![CDATA[STEP141]]>
-            </line>
-            <line>
-              <![CDATA[STEP142]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_Proforma_Service_Creation_PC02 -->
-        <test-method is-config="true" signature="Teardown(org.testng.ITestResult)[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:39:57 IST" name="Teardown" finished-at="2024-05-30T12:39:57 IST" duration-ms="230" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=TC_Proforma_Service_Creation_PC02 status=SUCCESS method=Testcases.TC_Proforma_Service_Creation_PC02()[pri:0, instance:commonMethods.Testcases@71cb3139] output=STEP102]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Teardown -->
-        <test-method is-config="true" signature="aftertest()[pri:0, instance:commonMethods.Testcases@71cb3139]" started-at="2024-05-30T12:39:57 IST" name="aftertest" finished-at="2024-05-30T12:39:58 IST" duration-ms="877" status="PASS">
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:commonMethods.Testcases@2f1d0bbc]" started-at="2024-06-01T13:43:16 IST" name="aftertest" finished-at="2024-06-01T13:43:17 IST" duration-ms="482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftertest -->

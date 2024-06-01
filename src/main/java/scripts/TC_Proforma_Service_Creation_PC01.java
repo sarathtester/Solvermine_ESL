@@ -12,18 +12,18 @@ import commonMethods.Utils;
 public class TC_Proforma_Service_Creation_PC01 extends Keywords{
 
 	String URL = TestNgXml.getdatafromExecution().get("TC_EMS_Contract_Registration_TS001");
-	String Username = Utils.getDataFromTestData("EMS_Module", "Userid", "Sheet2");
-	String pass_word = Utils.getDataFromTestData("EMS_Module", "PassWord", "Sheet2");
-	String searchfield = Utils.getDataFromTestData("VSS_Module", "Search_modulename", "Sheet2");
-	String servicecode = Utils.getDataFromTestData("VSS_Module", "Servicecode_Name", "Sheet2");
-	String New_Service = Utils.getDataFromTestData("VSS_Module", "NewService_Creation", "Sheet2");
-	String New_savepopup = Utils.getDataFromTestData("VSS_Module", "Savepopup", "Sheet2");
-	String Port_Value = Utils.getDataFromTestData("VSS_Module", "Portvalue", "Sheet2");
-	String Terminal_value = Utils.getDataFromTestData("VSS_Module", "Terminalvalue", "Sheet2");
-	String Port_Value1 = Utils.getDataFromTestData("VSS_Module", "Portvalue1", "Sheet2");
-	String color_verification = Utils.getDataFromTestData("VSS_Module", "Yellow_color", "Sheet2");
-	String remarks_field = Utils.getDataFromTestData("VSS_Module", "Remark_name", "Sheet2");
-	String exceptedstartdate = Utils.getDataFromTestData("VSS_Module", "Proforma_Date", "Sheet2");
+	String Username = Utils.getDataFromTestData("EMS_Module", "Userid", "Proforma_Creation");
+	String pass_word = Utils.getDataFromTestData("EMS_Module", "PassWord", "Proforma_Creation");
+	String searchfield = Utils.getDataFromTestData("VSS_Module", "Search_modulename", "Proforma_Creation");
+	String servicecode = Utils.getDataFromTestData("VSS_Module", "Servicecode_Name", "Proforma_Creation");
+	String New_Service = Utils.getDataFromTestData("VSS_Module", "NewService_Creation", "Proforma_Creation");
+	String New_savepopup = Utils.getDataFromTestData("VSS_Module", "Savepopup", "Proforma_Creation");
+	String Port_Value = Utils.getDataFromTestData("VSS_Module", "Portvalue", "Proforma_Creation");
+	String Terminal_value = Utils.getDataFromTestData("VSS_Module", "Terminalvalue", "Proforma_Creation");
+	String Port_Value1 = Utils.getDataFromTestData("VSS_Module", "Portvalue1", "Proforma_Creation");
+	String color_verification = Utils.getDataFromTestData("VSS_Module", "Yellow_color", "Proforma_Creation");
+	String remarks_field = Utils.getDataFromTestData("VSS_Module", "Remark_name", "Proforma_Creation");
+	String exceptedstartdate = Utils.getDataFromTestData("VSS_Module", "Proforma_Date", "Proforma_Creation");
 	
 	
 	public void Proformacreation01(WebDriver driver){

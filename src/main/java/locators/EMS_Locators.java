@@ -111,5 +111,47 @@ public interface EMS_Locators {
 	public static String portcode_field2="Recodefield_portcode2 >(//label[text()='AB001'])[2]";
 	public static String proformadate_field="proformadate_field >//*[@id='SPF-SPF_txtStartDate_input']";
 	
+	//3rd
+	public static String servicecode_click ="selectservicecode >//*[text()='ABIPRFSCH003']";
+	public static String Arr_dockvalue ="Arr_dockvalue >(//div[@col-id='arrDock1'])[2]";
+	public static String Arr_Dockmonth ="Arr_Dockmonth >//select[@data-handler='selectMonth']";
+	public static String Arr_Dockselectmonth ="Arr_Dockselectmonth >//option[text()='Jan']";
+	public static String Arr_Dockselectdate ="Arr_Dockselectdate >//a[text()='1']";
+	public static String calenderclosebutton ="calenderclosebutton >//button[text()='Close']";
+	public static String Arr_dockvaluebox ="Arr_dockvaluebox >(//*[@col-id='arrDock1'])[3]";
+	public static String Arrdock_Error ="Arrdock_Error >//span[text()='Arrival Dock cannot be before of Arrival Pilot.']";
+	public static String Dep_docktime ="Dep_docktime >(//*[@col-id='dep_Dock1'])[2]";
+	public static String Scrollbutton ="Scrollbutton >(//div[@ref='eBodyHorizontalScrollViewport'])[1]";
+	public static String Dep_docktime1 ="Dep_docktime1 >(//*[@col-id='dep_Dock1'])[3]";
+	public static String departuredoct_verifymsg ="departuredoct_verifymsg >//*[text()='Departure Dock cannot be before the Arrival Dock.']";
+	public static String Dep_polittime ="Dep_polittime >(//*[@col-id='dep_Pilot1'])[2]";
+	public static String Dep_polittime1 ="Dep_polittime1 >(//*[@col-id='dep_Pilot1'])[3]";
+	public static String DeparturePilot_verifymsg ="DeparturePilot_verifymsg >//*[text()='Departure Pilot should not be less than the Departure Dock.']";
+	public static String quickproforma ="quickproforma >(//span[text()='Quick Proforma'])[1]";
+	public static String quickproforma_portcode ="quickproforma_portcode >//*[@id='SPF_qprfrma_portcode_text_input']";
+	public static String editport ="editport >((//tr[@data-ri='1'])[2]/following::td)[1]";
+	public static String updatedportcode ="updatedportcode >//*[text()='ABCDE']";
+	public static String changetimezone ="changetimezone >((//span[text()='BufferTime'])[1]//following::td)[7]";
+	public static String timezone ="timezone >(//*[text()='0.0'])[1]";
+	public static String timezonechangetime ="timezonechangetime >((//*[text()='Time Zone'])[7]//following::td)[8]";
+	public static String Boundvalue ="Boundvaluechange >//*[@id='quickProformaCreation_defaultDsGrid1-0-SPF_quic_boundmenu_label']";
+	public static String changeboundvalue ="changeboundvalue >(//li[text()='E'])[2]";
+	public static String quickproforma_terminalcode ="quickproforma_terminalcode >//*[text()='BJFK9654']";
+	public static String click_terminalcodesearchicon ="click_terminalcodesearchicon >//*[@id='quickProformaCreation_defaultDsGrid1-1-SPF_qp_Terminalbtn']";
+	public static String search_terminalcode ="search_terminalcode >(//*[text()='AB009TER01'])[1]";
+	public static String click_moveup ="click_moveup >//*[text()='Move Up']";
+	public static String quickproforma_okbtn ="quickproforma_okbtn >(//span[text()='OK'])[8]";
+	public static String Quickproforma_portname ="Quickproforma_portname >((//tr[@data-ri='1'])[2]//following::td)[1]";
+	public static String aftermove_portname ="aftermove_portname >((//tr[@data-ri='0'])[3]//following::td)[1]";
+	public static String Quickproforma_portname3 ="Quickproforma_portname3 >((//tr[@data-ri='2'])[2]//following::td)[1]";
+	public static String Quickproforma_portname4 ="Quickproforma_portname4 >((//tr[@data-ri='3'])[2]//following::td)[1]";
+	public static String Quickproforma_portname5 ="Quickproforma_portname5 >((//tr[@data-ri='4'])[2]//following::td)[1]";
 	
+	public static String proforma_portname1 ="Quickproforma_portname3 >((//div[@row-id='0'])[2]//following::div)[2]";		
+	public static String proforma_portname2 ="Quickproforma_portname3 >((//div[@row-id='1'])[2]//following::div)[2]";
+	public static String proforma_portname3 ="Quickproforma_portname3 >((//div[@row-id='2'])[2]//following::div)[2]";
+	public static String proforma_portname4 ="Quickproforma_portname3 >((//div[@row-id='3'])[2]//following::div)[2]";
+	public static String proforma_portname5 ="Quickproforma_portname3 >((//div[@row-id='4'])[2]//following::div)[2]";
 }
+
+

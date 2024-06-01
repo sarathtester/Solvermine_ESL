@@ -22,9 +22,10 @@ import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 
+
 import scripts.TC_Proforma_Service_Creation_PC01;
 import scripts.TC_Proforma_Service_Creation_PC02;
-
+import scripts.TC_Proforma_Service_Creation_PC04;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 
@@ -53,9 +54,9 @@ public class Testcases extends Config {
 	public String Execution = "null";
 	public String buildname = "null";
 
-
 	TC_Proforma_Service_Creation_PC01  pc1 = new TC_Proforma_Service_Creation_PC01();
 	TC_Proforma_Service_Creation_PC02  pc2 = new TC_Proforma_Service_Creation_PC02();
+	TC_Proforma_Service_Creation_PC04  pc4 = new TC_Proforma_Service_Creation_PC04();
 	
 	
 	static ExtentSparkReporter spark;
@@ -98,7 +99,7 @@ public class Testcases extends Config {
 	public void aftertest() throws Throwable {
 		ATUReports.Aftertest(test);
 	}
-	
+
 	
 	@Test
 	public void TC_Proforma_Service_Creation_PC01() throws Exception {
@@ -127,4 +128,16 @@ public class Testcases extends Config {
 	}
 	
 	
+	@Test
+	public void TC_Proforma_Service_Creation_PC04() throws Exception {
+		test = extent.createTest("Proforma_creation04").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			pc4.Proformacreation04(driver);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
