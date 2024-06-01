@@ -21,8 +21,11 @@ import atu.testng.reports.ATUReports;
 import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
-
-import scripts.OCRDemo;
+import scripts.BookingModule;
+import scripts.VSS_LT04;
+import scripts.Vss_PC09;
+import scripts.Vss_SC06;
+import scripts.Vss_SC07;
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
@@ -52,7 +55,11 @@ public class Testcases extends Config {
 	public String Execution = "null";
 	public String buildname = "null";
 
-	OCRDemo d2=new OCRDemo();
+	BookingModule bk=new BookingModule();
+	Vss_SC06 scd=new Vss_SC06();
+	Vss_SC07 inAct=new Vss_SC07();
+	Vss_PC09 inActPro=new Vss_PC09();
+	VSS_LT04 renameVessel=new VSS_LT04();
 	
 	static ExtentSparkReporter spark;
 	static ExtentTest test;
@@ -95,20 +102,85 @@ public class Testcases extends Config {
 		ATUReports.Aftertest(test);
 	}
 
-	@Test
-	public void OCRDemo() throws Exception {
+	
+	
+	public void BookingModule() throws Throwable
+	{
 		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
 		Keywords.ActionTest(test);
 		WebDriver driver = null;
 		driver = getWebDriver1(browser);
 		try {
-			d2.ocrDemo(driver);
+			bk.bookingModule(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
-	
+	//@Test
+	public void Vss_SC06() throws Throwable
+	{
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+	   try
+	   {
+		   scd.vSS_SC06(driver);
+	   }
+	   catch(Exception e)
+	   {
+		   e.printStackTrace();
+	   }
+	}
+	//@Test
+	public void Vss_SC07() throws Throwable
+	{
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+	   try
+	   {
+		   inAct.vSS_SC07(driver);
+	   }
+	   catch(Exception e)
+	   {
+		   e.printStackTrace();
+	   }
+	}
+	@Test
+	public void Vss_PC09() throws Throwable
+	{
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+	   try
+	   {
+		   inActPro.vSS_PC09(driver);
+	   }
+	   catch(Exception e)
+	   {
+		   e.printStackTrace();
+	   }
+	}
+	//@Test
+	public void Vss_LT04() throws Throwable
+	{
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try
+		{
+			renameVessel.vSS_LT01(driver);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	
 	
 }
