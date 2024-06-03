@@ -5,7 +5,11 @@
 			<class name="commonMethods.Testcases" />
 		</classes>
 		<methods>
-			<include name="OCRDemo" priority="3" />
+			<include name="TC_Service_Creation_SC01" priority="3" />
+			<include name="TC_Service_Creation_SC02" priority="3" />
+			<include name="TC_Service_Creation_SC03" priority="3" />
+			<include name="TC_Service_Creation_SC04" priority="3" />
+			<include name="TC_Service_Creation_SC05" priority="3" />
 		</methods>
 	</test>
 	<listeners>

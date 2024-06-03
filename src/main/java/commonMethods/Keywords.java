@@ -1690,7 +1690,51 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		test = extentTest;
 	}
 
-
+	public boolean isElementAccessible(WebDriver driver,String Xpath) {
+      	String[] values=splitXpath(Xpath);
+      	try {
+      	WebElement Autscroll=driver.findElement(By.xpath(values[1]));
+        boolean isAccessible = Autscroll.isEnabled();
+      	
+     	 if (isAccessible) {
+             return true;
+ 	 	} else {
+             return false;
+         }
+      	}catch(Exception e) {
+    		return false;
+      	}
+     	 
+      }
+	public String getTextJavascript(WebDriver driver,String xpath) {
 		
+		String[] values = splitXpath(xpath);
+		try {
+			WebElement webElement = driver.findElement(By.xpath(values[1]));
+            String text = (String)((JavascriptExecutor)driver).executeScript("return arguments[0].value;", webElement);
+			return text;
+
+		} catch (Exception e) {
+			add1(driver, "Unable to retrieve the text " + values[0] + "- " + e.getLocalizedMessage(), LogAs.FAILED,true, values[0]);
+			Assert.fail();
+			return null;
+		}
+	}
+	public String getAttribute1(WebDriver driver, String xpath, String attribute) {
+		String[] values = splitXpath(xpath);
+		try {
+			WebElement inputBox = driver.findElement(By.xpath(values[1]));
+			String textInsideInputBox = inputBox.getAttribute(attribute);
+//			add(driver, "Retrieved the text of " + values[0], textInsideInputBox, true, values[0]);
+			return textInsideInputBox;
+		} catch (NoSuchElementException e) {
+			add1(driver, "Unable to retrieve the value " + values[0] + "- " + e.getLocalizedMessage(), LogAs.FAILED,
+					true, values[0]);
+		
+//			Assert.fail();
+			return null;
+	
+		}
+	}
 		
 }
