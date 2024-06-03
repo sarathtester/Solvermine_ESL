@@ -118,12 +118,14 @@ import atu.testng.reports.ATUReports;
 import atu.testng.reports.logging.LogAs;
 import atu.testng.reports.utils.Directory;
 import locators.Booking_Locators;
+import locators.Long_Term_Creation;
+import locators.Proforma_Service_Locator;
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 
-public class Keywords extends ATUReports implements Booking_Locators {
+public class Keywords extends ATUReports implements Long_Term_Creation  {
 	private static final String HMAC_SHA1_ALGORITHM = "HMACSHA1";
 
 	public String ElementWait = Utils.getDataFromTestConfig("Wait Time");
@@ -160,7 +162,6 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		String[] a = path.split(">");
 		return a;
 	}
-
 	public String screenshot(WebDriver driver, String screenshotName) {
 		String image_dest = null;
 		try {
@@ -190,8 +191,48 @@ public class Keywords extends ATUReports implements Booking_Locators {
 			add1(driver, "Unable to wait ", LogAs.FAILED, true, "Wait");
 			Assert.fail();
 		}
+		
 	}
+	
+	
+	
+	public String getTextBackgroundColor(WebDriver driver,String Xpath) {
+		String[] values=splitXpath(Xpath);
+		try {
+			WebElement eleSearch = driver.findElement(By.xpath(values[1]));
 
+			String rgbFormat = eleSearch.getCssValue("background-color");
+
+//			System.out.println(rgbFormat);     //In RGB Format the value will be print => rgba(254, 189, 105, 1)
+
+			String hexcolor = rgbToHex(rgbFormat);
+//			System.out.println(hexcolor);
+			
+			return hexcolor;
+		}catch(Exception e) {
+			System.out.println("Unable to get color of the element..!");
+			return "";
+		}
+		
+		
+	}
+	 public void colorValidation(WebDriver driver,String ExpColor,String ActColor,String Xpath) {
+     	String[] values=splitXpath(Xpath);
+     	if(ExpColor.equalsIgnoreCase(ActColor)) {
+     		add(driver, "Color Validation Passed , Expected Color : "+ExpColor+"  Actual Color : "+ActColor, LogAs.PASSED,true, values[0]);
+     	}else {
+ 			add1(driver, "Color Validation Failed , Expected Color : "+ExpColor+" Actual Color : "+ActColor, LogAs.FAILED,true, values[0]);
+     	}
+     	
+     }
+	public static String rgbToHex(String rgb) {
+        String[] rgbValues = rgb.replace("rgba(", "").replace(")", "").split(", ");
+        int red = Integer.parseInt(rgbValues[0]);
+        int green = Integer.parseInt(rgbValues[1]);
+        int blue = Integer.parseInt(rgbValues[2]);
+
+        return String.format("#%02X%02X%02X", red, green, blue);
+    }
 	
 
 	public static void dropdown(WebDriver driver, String xpath) {
@@ -912,8 +953,16 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		}
 
 	}
-
-	public void isElementClickable(WebDriver driver, String xpath) {
+	public void textValidation(WebDriver driver,String Exptext,String Acttext,String Xpath) {
+    	String[] values=splitXpath(Xpath);
+    	if(Exptext.equals(Acttext)) {
+    		add(driver, "Validation Passed , Expected Text : "+Exptext+" <---> Actual Text : "+Acttext, LogAs.PASSED,true, values[0]);
+    	}else {
+			add1(driver, "Validation Failed , Expected Text : "+Exptext+" <---> Actual Text : "+Acttext, LogAs.FAILED,true, values[0]);
+    	}
+    	
+    }
+	public boolean isElementClickable(WebDriver driver, String xpath) {
 		String[] values = splitXpath(xpath);
 		try {
 			WebElement webElement = driver.findElement(By.xpath(values[1]));
@@ -923,6 +972,18 @@ public class Keywords extends ATUReports implements Booking_Locators {
 		} catch (Exception e) {
 			add1(driver, "Element is not clickable " + values[0] + "- " + e.getLocalizedMessage(), LogAs.FAILED, true,
 					values[0]);
+		}
+		return failureScreenshot;
+	}
+	public void mouseOverToElement(WebDriver driver, String element) {
+		String[] values = splitXpath(element);
+		WebElement webElement = driver.findElement(By.xpath(values[1]));
+		try {
+			Actions builder = new Actions(driver);
+			builder.moveToElement(webElement).build().perform();
+         wait(driver,"1");
+		} catch (Exception e) {
+
 		}
 	}
 
@@ -953,11 +1014,11 @@ public class Keywords extends ATUReports implements Booking_Locators {
 
 	}
 
-	public void waitForElementNotpresent(WebDriver driver, String xpath) {
-		String[] values = splitXpath(xpath);
+	public void waitForElementNotpresent(WebDriver driver, String newbtn) {
+		String[] values = splitXpath(newbtn); 
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, WaitElementSeconds);
-			wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath))));
+			wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated(By.xpath(newbtn))));
 			add(driver, "Wait till the Element is visible " + values[0], LogAs.PASSED, true, values[0]);
 		} catch (Exception e) {
 			add1(driver, "Element is not visible " + values[0] + "- " + e.getLocalizedMessage(), LogAs.FAILED, true,
@@ -1319,22 +1380,22 @@ public class Keywords extends ATUReports implements Booking_Locators {
 				.ifPresent(WebElement::click);
 	}
 
-	public static String getCurrentDay() {
-		// Create a Calendar Object
-		Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+//	public static String getCurrentDay() {
+//		// Create a Calendar Object
+//		Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+//
+//		// Get Current Day as a number
+//		int todayInt = calendar.get(Calendar.DAY_OF_MONTH);
+//		System.out.println("Today Int: " + todayInt + "\n");
+//
+//		// Integer to String Conversion
+//		String todayStr = Integer.toString(todayInt);
+//		System.out.println("Today Str: " + todayStr + "\n");
+//
+//		return todayStr;
+//	}
 
-		// Get Current Day as a number
-		int todayInt = calendar.get(Calendar.DAY_OF_MONTH);
-		System.out.println("Today Int: " + todayInt + "\n");
-
-		// Integer to String Conversion
-		String todayStr = Integer.toString(todayInt);
-		System.out.println("Today Str: " + todayStr + "\n");
-
-		return todayStr;
-	}
-
-	public void scrolltill(WebDriver driver) {
+	public void scrolltill(WebDriver driver, String searchinside) {
 		try {
 
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -1343,6 +1404,18 @@ public class Keywords extends ATUReports implements Booking_Locators {
 			// add(driver, "Scrolled to the bottom ", LogAs.PASSED, true, "Not");
 		} catch (Exception e) {
 			// add1(driver, "Unable to scroll to the bottom", LogAs.FAILED, true, "Not");
+			Assert.fail();
+		}
+	}
+	public void scrollTop(WebDriver driver) {
+		try {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scroll(0,-200)", "");
+			add(driver, "Scrolled to the Top ", LogAs.PASSED, true, "Not");
+
+		} catch (Exception e) {
+			add1(driver, "Unable to scroll to the Top", LogAs.FAILED, true, "Not" + "- " + e.getLocalizedMessage());
+			((JavascriptExecutor) driver).executeScript("lambda-status=failed");
 			Assert.fail();
 		}
 	}

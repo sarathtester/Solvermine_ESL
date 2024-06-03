@@ -10,8 +10,8 @@
     <classes>
       <class name="commonMethods.Testcases">
         <methods>
+          <include name="Long_Term_Creation_LT02"/>
           <include name="Teardown"/>
-          <include name="OCRDemo"/>
           <include name="Extentreport"/>
           <include name="aftertest"/>
           <include name="getDataFromConfig"/>

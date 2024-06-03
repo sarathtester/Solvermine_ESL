@@ -22,7 +22,15 @@ import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 
-import scripts.OCRDemo;
+import scripts.TC_Booking_SC01_SC02;
+import scripts.TC_Booking_SC03_SC04;
+import scripts.Long_Term_Creation_LT01;
+import scripts.Long_Term_Creation_LT02;
+import scripts.Long_Term_Creation_LT03;
+import scripts.Proforma_Service_Creation_PC05;
+import scripts.Proforma_Service_Creation_PC07;
+import scripts.Proforma_Service_Creation_PC08;
+
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
@@ -52,8 +60,17 @@ public class Testcases extends Config {
 	public String Execution = "null";
 	public String buildname = "null";
 
-	OCRDemo d2=new OCRDemo();
-	
+	TC_Booking_SC01_SC02 d2=new TC_Booking_SC01_SC02();
+	TC_Booking_SC03_SC04 d3=new TC_Booking_SC03_SC04();
+	Proforma_Service_Creation_PC05 d4=new Proforma_Service_Creation_PC05();
+	 Proforma_Service_Creation_PC07 d5=new  Proforma_Service_Creation_PC07();
+	 Proforma_Service_Creation_PC08 d6=new Proforma_Service_Creation_PC08();
+	 Long_Term_Creation_LT01 d7=new Long_Term_Creation_LT01();
+	 Long_Term_Creation_LT02 d8=new Long_Term_Creation_LT02();
+	 Long_Term_Creation_LT03 d9=new Long_Term_Creation_LT03();
+	 
+	 
+	 
 	static ExtentSparkReporter spark;
 	static ExtentTest test;
 	static ExtentReports extent;
@@ -76,7 +93,7 @@ public class Testcases extends Config {
 		
 	}
 	
-	@BeforeTest
+	@BeforeTest 
 	
 	public void Extentreport() throws IOException {
 		
@@ -87,7 +104,7 @@ public class Testcases extends Config {
 	@AfterMethod
 	public void Teardown(ITestResult result) throws Throwable {
 		ATUReports.teardown(driver, result, test);
-		driver.quit();
+	//	driver.quit();
 	}
 	
 	@AfterTest
@@ -96,20 +113,110 @@ public class Testcases extends Config {
 	}
 
 	@Test
-	public void OCRDemo() throws Exception {
+	public void TC_Booking_SC01_SC02() throws Exception {
 		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
 		Keywords.ActionTest(test);
 		WebDriver driver = null;
 		driver = getWebDriver1(browser);
 		try {
-			d2.ocrDemo(driver);
+			d2.Booking(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Test
+	public void TC_Booking_SC03_SC04() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d3.Booking1(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Test
+	public void Proforma_Service_Creation_PC05() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d4.Creationedit(driver,test);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
 	
+	@Test
+	public void  Proforma_Service_Creation_PC07() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d5.Creationimport(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
-	
+	@Test
+	public void  Proforma_Service_Creation_PC08() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d6.Creationdelete(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Test
+	public void  Long_Term_Creation_LT01() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d7.Createrecord(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Test
+	public void  Long_Term_Creation_LT02() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d8.recordEdit(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Test
+	public void  Long_Term_Creation_LT03() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
+		Keywords.ActionTest(test);
+		WebDriver driver = null;
+		driver = getWebDriver1(browser);
+		try {
+			d9.recordConform(driver,test);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }
 

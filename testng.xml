@@ -5,7 +5,8 @@
 			<class name="commonMethods.Testcases" />
 		</classes>
 		<methods>
-			<include name="OCRDemo" priority="3" />
+		
+			<include name="Long_Term_Creation_LT03" priority="8" />
 		</methods>
 	</test>
 	<listeners>
