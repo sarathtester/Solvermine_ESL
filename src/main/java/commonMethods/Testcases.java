@@ -21,12 +21,8 @@ import atu.testng.reports.ATUReports;
 import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
-import scripts.TC_Service_Creation_SC01;
-import scripts.TC_Service_Creation_SC02;
-import scripts.TC_Service_Creation_SC03;
-import scripts.TC_Service_Creation_SC04;
-import scripts.TC_Service_Creation_SC05;
 
+import scripts.OCRDemo;
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
@@ -56,11 +52,7 @@ public class Testcases extends Config {
 	public String Execution = "null";
 	public String buildname = "null";
 
-	TC_Service_Creation_SC01 testc1 = new TC_Service_Creation_SC01();
-	TC_Service_Creation_SC02 testc2 = new TC_Service_Creation_SC02();
-	TC_Service_Creation_SC03 testc3 = new TC_Service_Creation_SC03();
-	TC_Service_Creation_SC04 testc4 = new TC_Service_Creation_SC04();
-	TC_Service_Creation_SC05 testc5 = new TC_Service_Creation_SC05();
+	OCRDemo d2=new OCRDemo();
 	
 	static ExtentSparkReporter spark;
 	static ExtentTest test;
@@ -104,70 +96,33 @@ public class Testcases extends Config {
 	}
 
 	@Test
-	public void TC_Service_Creation_SC01() throws Exception {
-		test = extent.createTest("Solvermind_VSS").assignAuthor("TD").assignCategory("E2E");
+	public void OCRDemo() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
 		Keywords.ActionTest(test);
 		WebDriver driver = null;
 		driver = getWebDriver1(browser);
 		try {
-			testc1.ServiceCreation(driver,test);
+			d2.ocrDemo(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
+	
 	@Test
-	public void TC_Service_Creation_SC02() throws Exception {
-		test = extent.createTest("Solvermind_VSS").assignAuthor("TD").assignCategory("E2E");
+	public void OCRDemo1() throws Exception {
+		test = extent.createTest("solvermind_vss").assignAuthor("TD").assignCategory("E2E");
 		Keywords.ActionTest(test);
 		WebDriver driver = null;
 		driver = getWebDriver1(browser);
 		try {
-			testc2.EditServiceCreation(driver,test);
+			d2.ocrDemo(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
-	@Test
-	public void TC_Service_Creation_SC03() throws Exception {
-		test = extent.createTest("Solvermind_VSS").assignAuthor("TD").assignCategory("E2E");
-		Keywords.ActionTest(test);
-		WebDriver driver = null;
-		driver = getWebDriver1(browser);
-		try {
-			testc3.ServiceCreationValidations(driver,test);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	@Test
-	public void TC_Service_Creation_SC04() throws Exception {
-		test = extent.createTest("Solvermind_VSS").assignAuthor("TD").assignCategory("E2E");
-		Keywords.ActionTest(test);
-		WebDriver driver = null;
-		driver = getWebDriver1(browser);
-		try {
-			testc4.SCInvalidData(driver,test);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	@Test
-	public void TC_Service_Creation_SC05() throws Exception {
-		test = extent.createTest("Solvermind_VSS").assignAuthor("TD").assignCategory("E2E");
-		Keywords.ActionTest(test);
-		WebDriver driver = null;
-		driver = getWebDriver1(browser);
-		try {
-			testc5.DuplicateRecordsCheck(driver,test);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
+	
 	
 }
 
