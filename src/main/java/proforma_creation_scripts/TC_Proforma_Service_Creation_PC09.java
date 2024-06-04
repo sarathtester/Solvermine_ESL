@@ -77,6 +77,9 @@ public class TC_Proforma_Service_Creation_PC09 extends Keywords{
  		}
  		waitForElement(driver, toolbarSaveButton);
  		click(driver,toolbarSaveButton);
+ 		
+ 		wait(driver,"4");
+ 		
  		if(isDisplayed(driver, proformaServicePopup))
  		{
  			Extent_pass(driver, "Proforma Service Popup is displayed", test);
@@ -90,7 +93,6 @@ public class TC_Proforma_Service_Creation_PC09 extends Keywords{
  		waitForElement(driver, proformaCode);
  		WebElement proCode=driver.findElement(By.xpath("//input[@id='SPF-SPF_txtProformaCde']"));
  		String actualProformaCode=proCode.getAttribute("value");
- 		System.out.println(proCode);
  		click(driver,closeButton_1);
  		
  		click(driver,Module_Search);

@@ -116,6 +116,7 @@ public class Testcases extends Config {
 	@AfterMethod
 	public void Teardown(ITestResult result) throws Throwable {
 		ATUReports.teardown(driver, result, test);
+		System.out.println("******************Script Execution completed******************");
 		driver.quit();
 	}
 	

@@ -36,7 +36,7 @@ public class TC_Service_Creation_SC01 extends Keywords{
 	LocalTime currentTime = LocalTime.now();
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ss");
 	String formattedTime = currentTime.format(formatter);
-	String SerInc = "AD"+formattedTime;
+	String SerInc = "AZ"+formattedTime;
 	
 	LocalTime currentTime1 = LocalTime.now();
 	DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("HHmmss");
@@ -187,7 +187,7 @@ public class TC_Service_Creation_SC01 extends Keywords{
 		click(driver,End_Date_Select);
 		
 		wait(driver,"5");
-		String Expected_value = "3";
+		String Expected_value = "2";
 		String Actual_value = getAttribute1(driver, Entered_ShipValue, "value");
 		System.out.println(Expected_value + " " + Actual_value);
 		if(Expected_value.equals(Actual_value)) {
